@@ -1,0 +1,38 @@
+---
+import TopBarButton from "./TopBarButton.astro";
+import moonIcon from "@/assets/moon.svg";
+import sunIcon from "@/assets/sun.svg";
+---
+
+<TopBarButton class="px-2 py-2">
+  <div id="theme-toggle-content">
+    <img src={sunIcon.src} alt="Light mode" class="sun-icon h-5 w-5" />
+    <img src={moonIcon.src} alt="Dark mode" class="moon-icon h-5 w-5" />
+  </div>
+</TopBarButton>
+
+<style>
+  .sun-icon {
+    display: none;
+  }
+  .moon-icon {
+    display: block;
+  }
+
+  :global(.dark) .sun-icon {
+    display: block;
+  }
+  :global(.dark) .moon-icon {
+    display: none;
+  }
+</style>
+
+<script>
+  const themeToggle = document.querySelector(
+    "#theme-toggle-content"
+  )?.parentElement;
+
+  themeToggle?.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+  });
+</script>
