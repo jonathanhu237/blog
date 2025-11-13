@@ -3,22 +3,25 @@
 import { cn } from "@/lib/utils";
 import TopBarButton from "./TopBarButton.astro";
 import ThemeToggle from "./ThemeToggle.astro";
+import Container from "@/components/Container.astro";
 
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="container flex mx-auto h-16 items-center justify-between px-4">
-  <TopBarButton class="font-bold text-xl">
-    <a href="/">Zezhao's Blog</a>
-  </TopBarButton>
+<nav class="border-b">
+  <Container class="flex items-center justify-between py-2">
+    <TopBarButton class="font-bold text-xl">
+      <a href="/">Zezhao's Blog</a>
+    </TopBarButton>
 
-  <div class="flex items-center gap-2">
-    <TopBarButton>
-      <a href="/">Home</a>
-    </TopBarButton>
-    <TopBarButton>
-      <a href="/about">About</a>
-    </TopBarButton>
-    <ThemeToggle />
-  </div>
+    <div class="flex items-center gap-2">
+      <TopBarButton>
+        <a href="/">Home</a>
+      </TopBarButton>
+      <TopBarButton>
+        <a href="/about">About</a>
+      </TopBarButton>
+      <ThemeToggle />
+    </div>
+  </Container>
 </nav>
