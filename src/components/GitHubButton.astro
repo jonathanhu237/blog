@@ -1,0 +1,28 @@
+---
+import TopBarButton from "./TopBarButton.astro";
+import githubBlack from "@/assets/github-black.svg";
+import githubWhite from "@/assets/github-white.svg";
+---
+
+<TopBarButton href="https://github.com/jonathanhu237/blog" class="px-2 py-2">
+  <div id="github-icon">
+    <img src={githubBlack.src} alt="GitHub" class="github-black h-5 w-5" />
+    <img src={githubWhite.src} alt="GitHub" class="github-white h-5 w-5" />
+  </div>
+</TopBarButton>
+
+<style>
+  .github-black {
+    display: block;
+  }
+  .github-white {
+    display: none;
+  }
+
+  :global(.dark) .github-black {
+    display: none;
+  }
+  :global(.dark) .github-white {
+    display: block;
+  }
+</style>
