@@ -3,16 +3,26 @@ import { cn } from "@/lib/utils";
 
 interface Props {
   class?: string;
+  href?: string;
+  target?: string;
+  rel?: string;
 }
 
-const { class: className } = Astro.props;
+const { class: className, href, target, rel } = Astro.props;
+const baseClass = cn(
+  "cursor-pointer inline-flex items-center justify-center rounded-md py-2 px-4 hover:bg-foreground/10 transition-colors",
+  className
+);
 ---
 
-<button
-  class={cn(
-    "cursor-pointer inline-flex items-center justify-center rounded-md py-2 px-4 hover:bg-foreground/10 transition-colors",
-    className
-  )}
->
-  <slot />
-</button>
+{
+  href ? (
+    <a href={href} target={target} rel={rel} class={baseClass}>
+      <slot />
+    </a>
+  ) : (
+    <button class={baseClass}>
+      <slot />
+    </button>
+  )
+}

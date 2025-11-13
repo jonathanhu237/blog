@@ -6,17 +6,13 @@ import Container from "@/components/Container.astro";
 
 <nav class="shadow-lg dark:shadow-white/5">
   <Container class="flex items-center justify-between py-2">
-    <TopBarButton class="font-bold text-xl">
-      <a href="/">Zezhao's Blog</a>
+    <TopBarButton href="/" class="font-bold text-xl">
+      Zezhao's Blog
     </TopBarButton>
 
     <div class="flex items-center gap-2">
-      <TopBarButton>
-        <a href="/">Home</a>
-      </TopBarButton>
-      <TopBarButton>
-        <a href="/about">About</a>
-      </TopBarButton>
+      <TopBarButton href="/"> Home </TopBarButton>
+      <TopBarButton href="/about"> About </TopBarButton>
       <ThemeToggle />
     </div>
   </Container>
