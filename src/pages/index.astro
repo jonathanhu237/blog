@@ -1,16 +1,51 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkMath from "remark-math";
+import remarkRehype from "remark-rehype";
+import rehypeKatex from "rehype-katex";
+import rehypeStringify from "rehype-stringify";
 
 const posts = await getCollection("posts");
 posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// Process excerpts for posts with <!-- more --> marker
+const postsWithExcerpts = await Promise.all(
+  posts.map(async (post) => {
+    let excerptHtml = null;
+
+    if (post.body) {
+      const moreIndex = post.body.indexOf("<!-- more -->");
+
+      if (moreIndex !== -1) {
+        const excerptMarkdown = post.body.substring(0, moreIndex);
+        const file = await unified()
+          .use(remarkParse)
+          .use(remarkMath)
+          .use(remarkRehype)
+          .use(rehypeKatex)
+          .use(rehypeStringify)
+          .process(excerptMarkdown);
+
+        excerptHtml = String(file);
+      }
+    }
+
+    return {
+      ...post,
+      excerptHtml,
+    };
+  })
+);
 ---
 
 <Layout>
   <h1 class="text-3xl font-bold mb-8">Posts</h1>
   <ul class="space-y-6">
     {
-      posts.map((post) => (
+      postsWithExcerpts.map((post) => (
         <li>
           <a href={`/posts/${post.id}`} class="block group">
             <h2 class="text-xl font-semibold group-hover:underline">
@@ -23,6 +58,12 @@ posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
                 day: "numeric",
               })}
             </p>
+            {post.excerptHtml && (
+              <div
+                class="prose dark:prose-invert mt-4 max-w-none"
+                set:html={post.excerptHtml}
+              />
+            )}
           </a>
         </li>
       ))

@@ -5,6 +5,8 @@ date: 2024-11-24 21:18:06
 
 An embedding is a mapping that preserves the structure of metric space when transformed into another. By leveraging embeddings, we can reduce complex problem to spaces where more efficient solutions are possible. In this post, we firstl introduce the concepts of metric space and embedding. Then, we demonstract two isometric embeddings, the first maps a finite $\ell_1$ space to an $\ell_\infty$ space, and the second maps any finite metric space to an $\ell_\infty$ space.
 
+<!-- more -->
+
 ## Preliminaries
 
 ### Metric Space

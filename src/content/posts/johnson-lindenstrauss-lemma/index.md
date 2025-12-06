@@ -7,6 +7,8 @@ The Johnson-Lindenstrauss (JL) Lemma is a important result in mathematics that p
 
 The proof is based on the work of Dasgupta et al.'s paper *An elementary proof of a theorem of Johnson and Lindenstrauss*. For a more detailed explanation, please refer to the original paper.
 
+<!-- more -->
+
 ## JL Lemma
 
 For any set $\mathcal{O}$ of $n$ points in $\mathbb{R}^d$, there exists a map $f:\mathbb{R}^{d}\to\mathbb{R}^k$, such that for all $\boldsymbol{o_i},\boldsymbol{o_j}\in\mathcal{P}$:

@@ -9,6 +9,8 @@ In this post, we introduce a new embedding that maps points from any metric spac
 
 This embedding was proposed by Matousek in his paper *On the Distortion Required For Embedding Finite Metric Spaces into Normed Spaces*. For a deeper understanding, we encourage you to refer to the original paper.
 
+<!-- more -->
+
 ## Theorem
 
 Given a finite metric space $(\mathcal{M},d_{\mathcal{M}})$, a parameter $D$, and $n=|\mathcal{M}|$, there exists an embedding $f$ from $(\mathcal{M},d_{\mathcal{M}})$ into $\mathcal{L}_{\infty}^{n,O\left(Dn^{\frac{2}{D}}\log{n}\right)}$ such that, for any pair of points $\boldsymbol{x},\boldsymbol{y}\in\mathcal{M}$, the embedding satisfies:

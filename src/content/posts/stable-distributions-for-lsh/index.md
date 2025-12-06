@@ -5,6 +5,8 @@ date: 2024-11-23 01:39:00
 
 In the previous post, we discussed that LSH addresses the $c$-NNS problem by solving multiple $(R,c)$-NNS problems using different radii. In this article, we will explore how to construct LSH families specifically designed to solve the $(R,c)$-NNS problems under the $\ell_p$ norm, leveraging the properties of $p$-stable distribution.
 
+<!-- more -->
+
 ## $\ell_p$ Norm
 
 The $\ell_p$ norm is a mathematical concept used to measure the length or distance of a vector in a space. It generalizes the idea of distance in different ways, depending on the value of $p$. The $\ell_p$ norm of a vector $\boldsymbol{o}=(o_1,o_2,\cdots,o_d)$ in $\mathbb{R}^d$ is defined as:
