@@ -9,7 +9,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://blog.zezhao-hu.top',
+  site: 'https://blog.zezhao-hu.dev',
 
   vite: {
     plugins: [tailwindcss()]
