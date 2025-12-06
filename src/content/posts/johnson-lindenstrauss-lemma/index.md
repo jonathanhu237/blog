@@ -1,6 +1,6 @@
 ---
 title: Johnson Lindenstrauss Lemma
-date: 2024-11-29 17:34:11
+date: 2025-11-29 17:34:11
 ---
 
 The Johnson-Lindenstrauss (JL) Lemma is a important result in mathematics that provides a way to reduce the dimensionality of data points while preserving the pairwise distances between them, up to a certain distortion. In this blog post, we introduce the JL Lemma and present a proof of the theorem. 
