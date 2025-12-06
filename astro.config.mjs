@@ -5,9 +5,12 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
 import cloudflare from '@astrojs/cloudflare';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://blog.zezhao-hu.top',
+
   vite: {
     plugins: [tailwindcss()]
   },
@@ -17,5 +20,6 @@ export default defineConfig({
     rehypePlugins: [rehypeKatex]
   },
 
-  adapter: cloudflare()
+  adapter: cloudflare(),
+  integrations: [sitemap()]
 });
